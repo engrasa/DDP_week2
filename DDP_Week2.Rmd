@@ -1,0 +1,32 @@
+---
+title: "DDP_Week2"
+author: "Alvin Alon"
+date: "January 25, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Leaflet Library
+
+```{r library, warning=FALSE}
+library(leaflet)
+```
+
+## Creating Map
+
+You can also embed plots, for example:
+
+```{r mapCreate, echo = FALSE}
+stmartin_map <- leaflet() %>%
+  addTiles()
+stmartin_map <- stmartin_map %>%
+  addMarkers(lat=13.8806, lng=120.9248, label = "Basilica of Saint Martin of Tours", labelOptions = labelOptions(noHide = TRUE))
+stmartin_map <- stmartin_map %>%
+  addCircles(lat=13.8806, lng=120.9248, weight = 1, radius =  100)
+stmartin_map
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
